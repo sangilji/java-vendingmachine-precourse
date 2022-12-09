@@ -15,6 +15,10 @@ public class Coins {
 
 	}
 
+	public Coins(Map<Coin, Integer> coins) {
+		this.coins = coins;
+	}
+
 	private void initCoins() {
 		for (Coin coin : Coin.values()) {
 			coins.put(coin, 0);
@@ -26,7 +30,7 @@ public class Coins {
 			int random = Randoms.pickNumberInList(Coin.getCoins());
 			if (validateRandom(random, amount)) {
 				Coin coin = Coin.find(random);
-				coins.put(coin,coins.get(coin)+1);
+				coins.put(coin, coins.get(coin) + 1);
 				amount -= random;
 			}
 		}
@@ -37,7 +41,11 @@ public class Coins {
 		return amount - coin >= 0;
 	}
 
-	public Map<Coin,Integer> getCoins() {
+	public Map<Coin, Integer> getCoins() {
 		return new TreeMap<>(coins);
+	}
+
+	public void returnMoney(Coin coin, int count) {
+		coins.put(coin, coins.get(coin) - count);
 	}
 }

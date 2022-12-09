@@ -9,4 +9,12 @@ public class Product {
 		this.name = name;
 		this.price = price;
 	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public boolean sameName(String name) {
+		return this.name.equals(name);
+	}
 }
