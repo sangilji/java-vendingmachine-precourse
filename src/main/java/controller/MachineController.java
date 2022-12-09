@@ -47,6 +47,6 @@ public class MachineController {
 	}
 
 	private void giveBackMoney() {
-		OutputView.printChangeMessage(vendingMachine.giveBack());
+		OutputView.printChangeMessage(vendingMachine.getAmount(),vendingMachine.giveBack());
 	}
 }

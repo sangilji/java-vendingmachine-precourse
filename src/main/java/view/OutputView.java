@@ -39,6 +39,14 @@ public class OutputView {
 		System.out.println(message);
 	}
 
-	public static void printChangeMessage(Coins giveBack) {
+	public static void printChangeMessage(int amount, Coins coins) {
+		System.out.printf("투입 금액: %d원\n잔돈\n", amount);
+		Map<Coin, Integer> changeCoins = coins.getCoins();
+		for (Coin coin : changeCoins.keySet()) {
+			if (changeCoins.get(coin) == 0) {
+				continue;
+			}
+			System.out.printf("%d원 - %d개\n", coin.getAmount(), changeCoins.get(coin));
+		}
 	}
 }

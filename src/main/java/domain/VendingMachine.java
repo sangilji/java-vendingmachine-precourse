@@ -59,7 +59,7 @@ public class VendingMachine {
 	}
 
 	private int getCoinCount(Map<Coin, Integer> machineCoins, Coin coin) {
-		int count = coin.getAmount() / inputAmount;
+		int count = inputAmount / coin.getAmount();
 
 		if (count > machineCoins.get(coin)) {
 			count = machineCoins.get(coin);
