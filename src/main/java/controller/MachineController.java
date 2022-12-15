@@ -9,7 +9,7 @@ import view.OutputView;
 
 public class MachineController {
 
-	VendingMachine vendingMachine;
+	private VendingMachine vendingMachine;
 
 	public void run() {
 		setting();

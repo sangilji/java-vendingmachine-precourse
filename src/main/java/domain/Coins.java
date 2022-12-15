@@ -12,7 +12,6 @@ public class Coins {
 	public Coins() {
 		this.coins = new TreeMap<>();
 		initCoins();
-
 	}
 
 	public Coins(Map<Coin, Integer> coins) {
@@ -34,7 +33,6 @@ public class Coins {
 				amount -= random;
 			}
 		}
-
 	}
 
 	private boolean validateRandom(int coin, int amount) {
